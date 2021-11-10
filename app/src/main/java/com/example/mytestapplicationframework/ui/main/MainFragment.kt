@@ -12,23 +12,23 @@ import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.mytestapplicationframework.R
-import com.example.mytestapplicationframework.databinding.CharactersFragmentBinding
+import com.example.mytestapplicationframework.databinding.MainFragmentBinding
 import com.example.mytestapplicationframework.utils.Resource
 import com.example.mytestapplicationframework.utils.autoCleared
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class MainFragment : Fragment(), CharactersAdapter.CharacterItemListener {
+class MainFragment : Fragment(), MainAdapter.MainItemListener {
 
-    private var binding: CharactersFragmentBinding by autoCleared()
+    private var binding: MainFragmentBinding by autoCleared()
     private val viewModel: MainViewModel by viewModels()
-    private lateinit var adapter: CharactersAdapter
+    private lateinit var adapter: MainAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = CharactersFragmentBinding.inflate(inflater, container, false)
+        binding = MainFragmentBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -39,7 +39,7 @@ class MainFragment : Fragment(), CharactersAdapter.CharacterItemListener {
     }
 
     private fun setupRecyclerView() {
-        adapter = CharactersAdapter(this)
+        adapter = MainAdapter(this)
         binding.charactersRv.layoutManager = LinearLayoutManager(requireContext())
         binding.charactersRv.adapter = adapter
     }
@@ -60,10 +60,10 @@ class MainFragment : Fragment(), CharactersAdapter.CharacterItemListener {
         })
     }
 
-    override fun onClickedCharacter(characterId: Int) {
+    override fun onClicked(id: Int) {
         findNavController().navigate(
             R.id.action_charactersFragment_to_characterDetailFragment,
-            bundleOf("id" to characterId)
+            bundleOf("id" to id)
         )
     }
 }

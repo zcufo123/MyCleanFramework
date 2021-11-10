@@ -11,7 +11,7 @@ import androidx.lifecycle.Observer
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CircleCrop
 import com.example.mytestapplicationframework.data.entities.Character
-import com.example.mytestapplicationframework.databinding.CharacterDetailFragmentBinding
+import com.example.mytestapplicationframework.databinding.DetailFragmentBinding
 import com.example.mytestapplicationframework.utils.Resource
 import com.example.mytestapplicationframework.utils.autoCleared
 import dagger.hilt.android.AndroidEntryPoint
@@ -19,14 +19,14 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class DetailFragment : Fragment() {
 
-    private var binding: CharacterDetailFragmentBinding by autoCleared()
+    private var binding: DetailFragmentBinding by autoCleared()
     private val viewModel: DetailViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = CharacterDetailFragmentBinding.inflate(inflater, container, false)
+        binding = DetailFragmentBinding.inflate(inflater, container, false)
         return binding.root
     }
 

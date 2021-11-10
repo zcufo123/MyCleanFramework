@@ -3,21 +3,21 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/charactersFragment">
+    app:startDestination="@id/MainFragment">
 
     <fragment
-        android:id="@+id/charactersFragment"
+        android:id="@+id/MainFragment"
         android:name="com.example.mytestapplicationframework.ui.main.MainFragment"
-        android:label="Characters"
-        tools:layout="@layout/characters_fragment" >
+        android:label="Main"
+        tools:layout="@layout/main_fragment" >
         <action
             android:id="@+id/action_charactersFragment_to_characterDetailFragment"
-            app:destination="@id/characterDetailFragment" />
+            app:destination="@id/DetailFragment" />
 
     </fragment>
     <fragment
-        android:id="@+id/characterDetailFragment"
+        android:id="@+id/DetailFragment"
         android:name="com.example.mytestapplicationframework.ui.detail.DetailFragment"
-        android:label="Character Detail"
-        tools:layout="@layout/character_detail_fragment" />
+        android:label="Detail"
+        tools:layout="@layout/detail_fragment" />
 </navigation>

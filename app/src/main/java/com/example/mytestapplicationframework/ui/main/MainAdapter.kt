@@ -8,12 +8,12 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CircleCrop
 import com.example.mytestapplicationframework.data.entities.Character
-import com.example.mytestapplicationframework.databinding.ItemCharacterBinding
+import com.example.mytestapplicationframework.databinding.ItemBinding
 
-class CharactersAdapter(private val listener: CharacterItemListener) : RecyclerView.Adapter<CharacterViewHolder>() {
+class MainAdapter(private val listener: MainItemListener) : RecyclerView.Adapter<MainViewHolder>() {
 
-    interface CharacterItemListener {
-        fun onClickedCharacter(characterId: Int)
+    interface MainItemListener {
+        fun onClicked(id: Int)
     }
 
     private val items = ArrayList<Character>()
@@ -24,17 +24,17 @@ class CharactersAdapter(private val listener: CharacterItemListener) : RecyclerV
         notifyDataSetChanged()
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CharacterViewHolder {
-        val binding: ItemCharacterBinding = ItemCharacterBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return CharacterViewHolder(binding, listener)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainViewHolder {
+        val binding: ItemBinding = ItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return MainViewHolder(binding, listener)
     }
 
     override fun getItemCount(): Int = items.size
 
-    override fun onBindViewHolder(holder: CharacterViewHolder, position: Int) = holder.bind(items[position])
+    override fun onBindViewHolder(holder: MainViewHolder, position: Int) = holder.bind(items[position])
 }
 
-class CharacterViewHolder(private val itemBinding: ItemCharacterBinding, private val listener: CharactersAdapter.CharacterItemListener) : RecyclerView.ViewHolder(itemBinding.root),
+class MainViewHolder(private val itemBinding: ItemBinding, private val listener: MainAdapter.MainItemListener) : RecyclerView.ViewHolder(itemBinding.root),
     View.OnClickListener {
 
     private lateinit var character: Character
@@ -55,7 +55,7 @@ class CharacterViewHolder(private val itemBinding: ItemCharacterBinding, private
     }
 
     override fun onClick(v: View?) {
-        listener.onClickedCharacter(character.id)
+        listener.onClicked(character.id)
     }
 }
 
