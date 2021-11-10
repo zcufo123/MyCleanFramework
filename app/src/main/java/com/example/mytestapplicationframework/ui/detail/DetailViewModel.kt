@@ -1,4 +1,4 @@
-package com.example.mytestapplicationframework.ui.characterdetail
+package com.example.mytestapplicationframework.ui.detail
 
 import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.LiveData
@@ -9,7 +9,7 @@ import com.example.mytestapplicationframework.data.entities.Character
 import com.example.mytestapplicationframework.data.repository.CharacterRepository
 import com.example.mytestapplicationframework.utils.Resource
 
-class CharacterDetailViewModel @ViewModelInject constructor(
+class DetailViewModel @ViewModelInject constructor(
     private val repository: CharacterRepository
 ) : ViewModel() {
 

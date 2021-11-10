@@ -1,4 +1,4 @@
-package com.example.mytestapplicationframework.ui.characters
+package com.example.mytestapplicationframework.ui.main
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -18,10 +18,10 @@ import com.example.mytestapplicationframework.utils.autoCleared
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class CharactersFragment : Fragment(), CharactersAdapter.CharacterItemListener {
+class MainFragment : Fragment(), CharactersAdapter.CharacterItemListener {
 
     private var binding: CharactersFragmentBinding by autoCleared()
-    private val viewModel: CharactersViewModel by viewModels()
+    private val viewModel: MainViewModel by viewModels()
     private lateinit var adapter: CharactersAdapter
 
     override fun onCreateView(

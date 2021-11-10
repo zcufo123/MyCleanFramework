@@ -1,4 +1,4 @@
-package com.example.mytestapplicationframework.ui.characterdetail
+package com.example.mytestapplicationframework.ui.detail
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -17,10 +17,10 @@ import com.example.mytestapplicationframework.utils.autoCleared
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class CharacterDetailFragment : Fragment() {
+class DetailFragment : Fragment() {
 
     private var binding: CharacterDetailFragmentBinding by autoCleared()
-    private val viewModel: CharacterDetailViewModel by viewModels()
+    private val viewModel: DetailViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
