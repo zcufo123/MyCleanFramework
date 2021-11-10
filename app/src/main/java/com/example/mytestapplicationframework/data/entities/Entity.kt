@@ -3,8 +3,8 @@ package com.example.mytestapplicationframework.data.entities
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity(tableName = "characters")
-data class Character(
+@Entity(tableName = "entities")
+data class Entity(
     val created: String,
     val gender: String,
     @PrimaryKey

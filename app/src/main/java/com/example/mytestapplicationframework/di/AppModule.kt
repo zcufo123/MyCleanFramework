@@ -2,10 +2,10 @@ package com.example.mytestapplicationframework.di
 
 import android.content.Context
 import com.example.mytestapplicationframework.data.local.AppDatabase
-import com.example.mytestapplicationframework.data.local.CharacterDao
-import com.example.mytestapplicationframework.data.remote.CharacterRemoteDataSource
-import com.example.mytestapplicationframework.data.remote.CharacterService
-import com.example.mytestapplicationframework.data.repository.CharacterRepository
+import com.example.mytestapplicationframework.data.local.EntityDao
+import com.example.mytestapplicationframework.data.remote.EntityRemoteDataSource
+import com.example.mytestapplicationframework.data.remote.EntityService
+import com.example.mytestapplicationframework.data.repository.EntityRepository
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import dagger.Module
@@ -32,11 +32,11 @@ object AppModule {
     fun provideGson(): Gson = GsonBuilder().create()
 
     @Provides
-    fun provideCharacterService(retrofit: Retrofit): CharacterService = retrofit.create(CharacterService::class.java)
+    fun provideService(retrofit: Retrofit): EntityService = retrofit.create(EntityService::class.java)
 
     @Singleton
     @Provides
-    fun provideCharacterRemoteDataSource(characterService: CharacterService) = CharacterRemoteDataSource(characterService)
+    fun provideRemoteDataSource(entityService: EntityService) = EntityRemoteDataSource(entityService)
 
     @Singleton
     @Provides
@@ -44,11 +44,11 @@ object AppModule {
 
     @Singleton
     @Provides
-    fun provideCharacterDao(db: AppDatabase) = db.characterDao()
+    fun provideDao(db: AppDatabase) = db.entityDao()
 
     @Singleton
     @Provides
-    fun provideRepository(remoteDataSource: CharacterRemoteDataSource,
-                          localDataSource: CharacterDao) =
-        CharacterRepository(remoteDataSource, localDataSource)
+    fun provideRepository(remoteDataSource: EntityRemoteDataSource,
+                          localDataSource: EntityDao) =
+        EntityRepository(remoteDataSource, localDataSource)
 }

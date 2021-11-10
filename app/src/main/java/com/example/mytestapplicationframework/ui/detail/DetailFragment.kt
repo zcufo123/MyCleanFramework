@@ -10,7 +10,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CircleCrop
-import com.example.mytestapplicationframework.data.entities.Character
+import com.example.mytestapplicationframework.data.entities.Entity
 import com.example.mytestapplicationframework.databinding.DetailFragmentBinding
 import com.example.mytestapplicationframework.utils.Resource
 import com.example.mytestapplicationframework.utils.autoCleared
@@ -37,7 +37,7 @@ class DetailFragment : Fragment() {
     }
 
     private fun setupObservers() {
-        viewModel.character.observe(viewLifecycleOwner, Observer {
+        viewModel.entity.observe(viewLifecycleOwner, Observer {
             when (it.status) {
                 Resource.Status.SUCCESS -> {
                     bindCharacter(it.data!!)
@@ -56,13 +56,13 @@ class DetailFragment : Fragment() {
         })
     }
 
-    private fun bindCharacter(character: Character) {
-        binding.name.text = character.name
-        binding.species.text = character.species
-        binding.status.text = character.status
-        binding.gender.text = character.gender
+    private fun bindCharacter(entity: Entity) {
+        binding.name.text = entity.name
+        binding.species.text = entity.species
+        binding.status.text = entity.status
+        binding.gender.text = entity.gender
         Glide.with(binding.root)
-            .load(character.image)
+            .load(entity.image)
             .transform(CircleCrop())
             .into(binding.image)
     }

@@ -1,6 +1,6 @@
 package com.example.mytestapplicationframework.data.entities
 
-data class CharacterList(
+data class EntityList(
     val info: Info,
-    val results: List<Character>
+    val results: List<Entity>
 )
