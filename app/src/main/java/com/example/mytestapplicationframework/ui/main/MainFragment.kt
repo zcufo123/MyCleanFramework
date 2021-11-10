@@ -40,12 +40,12 @@ class MainFragment : Fragment(), MainAdapter.MainItemListener {
 
     private fun setupRecyclerView() {
         adapter = MainAdapter(this)
-        binding.charactersRv.layoutManager = LinearLayoutManager(requireContext())
-        binding.charactersRv.adapter = adapter
+        binding.mainRv.layoutManager = LinearLayoutManager(requireContext())
+        binding.mainRv.adapter = adapter
     }
 
     private fun setupObservers() {
-        viewModel.characters.observe(viewLifecycleOwner, Observer {
+        viewModel.entities.observe(viewLifecycleOwner, Observer {
             when (it.status) {
                 Resource.Status.SUCCESS -> {
                     binding.progressBar.visibility = View.GONE
@@ -62,7 +62,7 @@ class MainFragment : Fragment(), MainAdapter.MainItemListener {
 
     override fun onClicked(id: Int) {
         findNavController().navigate(
-            R.id.action_charactersFragment_to_characterDetailFragment,
+            R.id.action_mainFragment_to_detailFragment,
             bundleOf("id" to id)
         )
     }

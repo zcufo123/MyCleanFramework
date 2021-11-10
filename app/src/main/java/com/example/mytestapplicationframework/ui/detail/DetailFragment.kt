@@ -40,9 +40,9 @@ class DetailFragment : Fragment() {
         viewModel.entity.observe(viewLifecycleOwner, Observer {
             when (it.status) {
                 Resource.Status.SUCCESS -> {
-                    bindCharacter(it.data!!)
+                    bindEntity(it.data!!)
                     binding.progressBar.visibility = View.GONE
-                    binding.characterCl.visibility = View.VISIBLE
+                    binding.detailCl.visibility = View.VISIBLE
                 }
 
                 Resource.Status.ERROR ->
@@ -50,13 +50,13 @@ class DetailFragment : Fragment() {
 
                 Resource.Status.LOADING -> {
                     binding.progressBar.visibility = View.VISIBLE
-                    binding.characterCl.visibility = View.GONE
+                    binding.detailCl.visibility = View.GONE
                 }
             }
         })
     }
 
-    private fun bindCharacter(entity: Entity) {
+    private fun bindEntity(entity: Entity) {
         binding.name.text = entity.name
         binding.species.text = entity.species
         binding.status.text = entity.status

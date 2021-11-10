@@ -8,5 +8,5 @@ class MainViewModel @ViewModelInject constructor(
     private val repository: EntityRepository
 ) : ViewModel() {
 
-    val characters = repository.getEntities()
+    val entities = repository.getEntities()
 }
