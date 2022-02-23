@@ -1,4 +1,4 @@
-package com.example.mytestapplicationframework.ui.main
+package com.example.mytestapplicationframework.presentation.main
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater

@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/MainFragment"
-        android:name="com.example.mytestapplicationframework.ui.main.MainFragment"
+        android:name="com.example.mytestapplicationframework.presentation.main.MainFragment"
         android:label="Main"
         tools:layout="@layout/main_fragment" >
         <action
@@ -17,7 +17,7 @@
     </fragment>
     <fragment
         android:id="@+id/DetailFragment"
-        android:name="com.example.mytestapplicationframework.ui.detail.DetailFragment"
+        android:name="com.example.mytestapplicationframework.presentation.detail.DetailFragment"
         android:label="Detail"
         tools:layout="@layout/detail_fragment" />
 </navigation>

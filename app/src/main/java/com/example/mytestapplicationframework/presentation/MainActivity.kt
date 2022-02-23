@@ -1,4 +1,4 @@
-package com.example.mytestapplicationframework.ui
+package com.example.mytestapplicationframework.presentation
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

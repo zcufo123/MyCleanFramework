@@ -1,4 +1,4 @@
-package com.example.mytestapplicationframework.ui.detail
+package com.example.mytestapplicationframework.presentation.detail
 
 import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.LiveData

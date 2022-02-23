@@ -1,4 +1,4 @@
-package com.example.mytestapplicationframework.ui.detail
+package com.example.mytestapplicationframework.presentation.detail
 
 import android.os.Bundle
 import android.view.LayoutInflater

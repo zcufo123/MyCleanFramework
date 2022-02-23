@@ -1,4 +1,4 @@
-package com.example.mytestapplicationframework.ui.compose
+package com.example.mytestapplicationframework.presentation.compose
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -8,7 +8,7 @@ import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.mytestapplicationframework.ui.compose.ui.theme.MyCleanFrameworkTheme
+import com.example.mytestapplicationframework.presentation.compose.ui.theme.MyCleanFrameworkTheme
 
 class MainComposeActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
