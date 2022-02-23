@@ -13,6 +13,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.mytestapplicationframework.R
 import com.example.mytestapplicationframework.databinding.MainFragmentBinding
+import com.example.mytestapplicationframework.utils.Constant
 import com.example.mytestapplicationframework.utils.Resource
 import com.example.mytestapplicationframework.utils.autoCleared
 import dagger.hilt.android.AndroidEntryPoint
@@ -63,7 +64,7 @@ class MainFragment : Fragment(), MainAdapter.MainItemListener {
     override fun onClicked(id: Int) {
         findNavController().navigate(
             R.id.action_mainFragment_to_detailFragment,
-            bundleOf("id" to id)
+            bundleOf(Constant.ENTITY_ID to id)
         )
     }
 }

@@ -12,6 +12,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CircleCrop
 import com.example.mytestapplicationframework.data.entities.Entity
 import com.example.mytestapplicationframework.databinding.DetailFragmentBinding
+import com.example.mytestapplicationframework.utils.Constant
 import com.example.mytestapplicationframework.utils.Resource
 import com.example.mytestapplicationframework.utils.autoCleared
 import dagger.hilt.android.AndroidEntryPoint
@@ -32,7 +33,7 @@ class DetailFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        arguments?.getInt("id")?.let { viewModel.start(it) }
+        arguments?.getInt(Constant.ENTITY_ID)?.let { viewModel.start(it) }
         setupObservers()
     }
 
