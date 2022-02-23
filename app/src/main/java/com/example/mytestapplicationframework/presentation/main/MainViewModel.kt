@@ -3,10 +3,11 @@ package com.example.mytestapplicationframework.presentation.main
 import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.ViewModel
 import com.example.mytestapplicationframework.data.repository.EntityRepository
+import com.example.mytestapplicationframework.domain.EntityListUseCase
 
 class MainViewModel @ViewModelInject constructor(
-    private val repository: EntityRepository
+    entityListUseCase: EntityListUseCase
 ) : ViewModel() {
 
-    val entities = repository.getEntities()
+    val entities = entityListUseCase.getEntities()
 }

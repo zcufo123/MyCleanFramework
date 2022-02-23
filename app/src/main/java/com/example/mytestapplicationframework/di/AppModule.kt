@@ -6,6 +6,8 @@ import com.example.mytestapplicationframework.data.local.EntityDao
 import com.example.mytestapplicationframework.data.remote.EntityRemoteDataSource
 import com.example.mytestapplicationframework.data.remote.EntityService
 import com.example.mytestapplicationframework.data.repository.EntityRepository
+import com.example.mytestapplicationframework.domain.EntityDetailUseCase
+import com.example.mytestapplicationframework.domain.EntityListUseCase
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import dagger.Module
@@ -33,6 +35,12 @@ object AppModule {
 
     @Provides
     fun provideService(retrofit: Retrofit): EntityService = retrofit.create(EntityService::class.java)
+
+    @Provides
+    fun provideEntityListUseCase(entityRepository: EntityRepository) = EntityListUseCase(entityRepository)
+
+    @Provides
+    fun provideEntityDetailUseCase(entityRepository: EntityRepository) = EntityDetailUseCase(entityRepository)
 
     @Singleton
     @Provides
