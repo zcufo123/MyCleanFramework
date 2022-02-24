@@ -33,12 +33,11 @@ class DetailFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        arguments?.getInt(Constant.ENTITY_ID)?.let { viewModel.start(it) }
-        setupObservers()
+        arguments?.getInt(Constant.ENTITY_ID)?.let { setupObservers(it) }
     }
 
-    private fun setupObservers() {
-        viewModel.entity.observe(viewLifecycleOwner, Observer {
+    private fun setupObservers(id: Int) {
+        viewModel.find(id).observe(viewLifecycleOwner, Observer {
             when (it.status) {
                 Resource.Status.SUCCESS -> {
                     bindEntity(it.data!!)
