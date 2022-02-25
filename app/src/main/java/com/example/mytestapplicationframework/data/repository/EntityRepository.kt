@@ -1,9 +1,8 @@
 package com.example.mytestapplicationframework.data.repository
 
-import com.example.mytestapplicationframework.data.entities.Entity
+import com.example.mytestapplicationframework.data.model.Entity
 import com.example.mytestapplicationframework.data.local.EntityDao
 import com.example.mytestapplicationframework.data.remote.EntityRemoteDataSource
-import com.example.mytestapplicationframework.utils.performGetOperation
 import javax.inject.Inject
 
 class EntityRepository @Inject constructor(

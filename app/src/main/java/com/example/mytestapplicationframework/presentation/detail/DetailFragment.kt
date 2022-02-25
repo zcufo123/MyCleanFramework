@@ -10,7 +10,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CircleCrop
-import com.example.mytestapplicationframework.data.entities.Entity
+import com.example.mytestapplicationframework.data.model.Entity
 import com.example.mytestapplicationframework.databinding.DetailFragmentBinding
 import com.example.mytestapplicationframework.utils.Constant
 import com.example.mytestapplicationframework.utils.Resource

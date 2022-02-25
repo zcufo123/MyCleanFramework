@@ -1,7 +1,7 @@
 package com.example.mytestapplicationframework.data.remote
 
-import com.example.mytestapplicationframework.data.entities.Entity
-import com.example.mytestapplicationframework.data.entities.EntityList
+import com.example.mytestapplicationframework.data.model.Entity
+import com.example.mytestapplicationframework.data.model.EntityList
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path

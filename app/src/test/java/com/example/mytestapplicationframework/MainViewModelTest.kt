@@ -1,7 +1,7 @@
 package com.example.mytestapplicationframework
 
 import androidx.lifecycle.MutableLiveData
-import com.example.mytestapplicationframework.data.entities.Entity
+import com.example.mytestapplicationframework.data.model.Entity
 import com.example.mytestapplicationframework.domain.EntityListUseCase
 import com.example.mytestapplicationframework.presentation.main.MainViewModel
 import com.example.mytestapplicationframework.utils.Resource

@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CircleCrop
-import com.example.mytestapplicationframework.data.entities.Entity
+import com.example.mytestapplicationframework.data.model.Entity
 import com.example.mytestapplicationframework.databinding.ItemBinding
 
 class MainAdapter(private val listener: MainItemListener) : RecyclerView.Adapter<MainViewHolder>() {

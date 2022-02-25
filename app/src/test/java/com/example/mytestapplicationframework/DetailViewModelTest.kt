@@ -3,7 +3,7 @@ package com.example.mytestapplicationframework
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.MutableLiveData
-import com.example.mytestapplicationframework.data.entities.Entity
+import com.example.mytestapplicationframework.data.model.Entity
 import com.example.mytestapplicationframework.domain.EntityDetailUseCase
 import com.example.mytestapplicationframework.presentation.detail.DetailViewModel
 import com.example.mytestapplicationframework.utils.Resource

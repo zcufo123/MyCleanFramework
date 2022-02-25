@@ -1,4 +1,4 @@
-package com.example.mytestapplicationframework.data.entities
+package com.example.mytestapplicationframework.data.model
 
 data class EntityList(
     val info: Info,
