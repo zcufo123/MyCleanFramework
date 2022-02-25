@@ -1,6 +1,7 @@
 package com.example.mytestapplicationframework.di
 
 import com.example.mytestapplicationframework.data.remote.EntityService
+import com.example.mytestapplicationframework.utils.ServerConfig
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import dagger.Module
@@ -18,7 +19,7 @@ object NetworkModule {
     @Singleton
     @Provides
     fun provideRetrofit(gson: Gson): Retrofit = Retrofit.Builder()
-        .baseUrl("https://rickandmortyapi.com/api/")
+        .baseUrl(ServerConfig.SERVER_URL)
         .addConverterFactory(GsonConverterFactory.create(gson))
         .build()
 
